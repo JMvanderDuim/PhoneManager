@@ -58,7 +58,7 @@
     "Server2016Image": {
       "publisher": "MicrosoftWindowsServer",
       "offer": "WindowsServer",
-      "sku": "Windows-Server-Technical-Preview",
+      "sku": "2016-DataCenter",
       "version": "latest"
     },
     "Server2012R2Image": {
