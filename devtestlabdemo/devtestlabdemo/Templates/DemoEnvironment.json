@@ -4,7 +4,7 @@
   "parameters": {
     "envPrefix": {
       "type": "string",
-      "defaultValue": "PMs4blab",
+      "defaultValue": "pms4blab",
       "metadata": {
         "description": "Common prefix for all resource naming"
       }
