@@ -35,7 +35,7 @@
     },
     "artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/pcdiks/devtestlab/master/devtestlabdemo/devtestlabdemo",
+      "defaultValue": "https://raw.githubusercontent.com/jmvanderduim/phonemanager/master/devtestlabdemo/devtestlabdemo",
       "metadata": {
         "description": "Storage Account/GitHub base uri for required files"
       }
