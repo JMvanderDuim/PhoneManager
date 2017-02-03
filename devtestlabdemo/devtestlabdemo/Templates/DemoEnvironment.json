@@ -343,6 +343,57 @@
         }
       }
     },
+      {
+      "name": "FrontendServer",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "NetworkAndStorage",
+        "DomainControllerDSC"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('artifactsLocation'), '/Templates/NestedDeploy/FEServer.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "VirtualNetwork": {
+            "value": "[variables('VirtualNetwork')]"
+          },
+          "VirtualNetworkId": {
+            "value": "[reference('NetworkAndStorage').outputs.VirtualNetworkId.value]"
+          },
+          "StorageAccount": {
+            "value": "[variables('StorageAccount')]"
+          },
+          "StorageAccountId": {
+            "value": "[reference('NetworkAndStorage').outputs.StorageAccountId.value]"
+          },
+          "AdminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "envPrefix": {
+            "value": "[parameters('envPrefix')]"
+          },
+          "vmImageReference": {
+            "value": "[variables('Server2016Image')]"
+          },
+          "artifactsLocation": {
+            "value": "[parameters('artifactsLocation')]"
+          },
+          "vmName": {
+            "value": "[variables('vmConfiguration').dir.name]"
+          },
+          "vmSize": {
+            "value": "[variables('vmConfiguration').dir.size]"
+          }
+        }
+      }
+    },
     {
       "name": "DomainControllerDSC",
       "type": "Microsoft.Resources/deployments",
